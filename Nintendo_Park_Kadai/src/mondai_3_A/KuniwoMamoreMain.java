@@ -12,10 +12,11 @@ public class KuniwoMamoreMain {
 		int numECD = 5; //the number of enemies that can be defeated
 		
 		String[][] answer = new String[dsNum][2];
-		int numFE = 0; //the number of fallen enemies
+		//int numFE = 0; //the number of fallen enemies
 		
 		//Start Battle
 		for(int i = 0 ; i < dsNum ; i++) {
+			int numFE = 0; //the number of fallen enemies
 			int numSkill = Integer.parseInt(ds[i][0]);
 			String[] numEnemy = ds[i][1].split(" ");
 			boolean flgVD = true; // Victory(=true) or Defeat(=false) FLG
@@ -37,7 +38,8 @@ public class KuniwoMamoreMain {
 			answer[i][0] = String.valueOf(flgVD);
 			answer[i][1] = String.valueOf(numFE);
 			
-			System.out.println(flgVD + " " + numFE);
+			//System.out.println(flgVD + " " + numFE);
+			System.out.println(answer[i][0] + " " + answer[i][1]);
 		}
 
 	}
