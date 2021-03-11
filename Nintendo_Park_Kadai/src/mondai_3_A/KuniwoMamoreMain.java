@@ -1,18 +1,37 @@
 package mondai_3_A;
 
+import java.util.Scanner;
+
 public class KuniwoMamoreMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//input
-		int dsNum = 2;
-		String[][] ds = {{"3", "3 2 4 6 2 4 1 5 3 5"}, 
-						 {"5", "7 4 3 4 6 4 12 3 9 9 2 4 3 7 9 10 2 1 4 12"}};
+		//int dsNum = 2;
+		//String[][] ds = {{"3", "3 2 4 6 2 4 1 5 3 5"}, 
+		//				 {"5", "7 4 3 4 6 4 12 3 9 9 2 4 3 7 9 10 2 1 4 12"}};
+		int dsNum;
+		String[][] ds;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter the number of sets.");
+		dsNum = sc.nextInt();
+		
+		ds = new String[dsNum][2];
+		
+		for(int i = 0 ; i < dsNum ; i++) {
+			System.out.println("Please enter the number of times the skill can be used.");
+			ds[i][0] = sc.next();
+			System.out.println("Enter enemy groups and their number of people.");
+			sc.nextLine();
+			ds[i][1] = sc.nextLine();
+		}
+		//System.out.println(ds[0][0] + " / " + ds[0][1]);
+		sc.close();
 		
 		int numECD = 5; //the number of enemies that can be defeated
 		
 		String[][] answer = new String[dsNum][2];
-		//int numFE = 0; //the number of fallen enemies
 		
 		//Start Battle
 		for(int i = 0 ; i < dsNum ; i++) {
@@ -39,7 +58,7 @@ public class KuniwoMamoreMain {
 			answer[i][1] = String.valueOf(numFE);
 			
 			//System.out.println(flgVD + " " + numFE);
-			System.out.println(answer[i][0] + " " + answer[i][1]);
+			System.out.printf("Battle[%d] : " + answer[i][0] + " " + answer[i][1] + "\n", i + 1);
 		}
 
 	}
