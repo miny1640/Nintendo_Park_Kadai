@@ -1,6 +1,7 @@
 package mondai_3_B;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class BullsAndCows {
 
@@ -41,10 +42,45 @@ public class BullsAndCows {
 				//sc.nextLine();
 				ds[j] = sc.nextLine();
 			}
+			
+			//Bulls & Cows Start
+			ArrayList<String> result = new ArrayList<String>();
+			result = bullsAndCows(result, ds, qNum);
+			
+			answer[i] = String.valueOf(i);
 		}
 		sc.close();
 
+		System.out.println("<answer>");
+		for(int i = 0 ; i < dsNum ; i++) {
+			System.out.printf("SET[%d] : " + answer[i] + "\n", i + 1);
+		}
 
+	}
+	
+	static ArrayList<String> bullsAndCows(ArrayList<String> result, String[] ds, int qNum) {
+		if(qNum > 1) {
+			result = bullsAndCows(result, ds, qNum - 1);
+		}
+		
+		String[] question = ds[qNum - 1].split(" ");
+		int bull = 0; //Integer.parseInt(question[1])
+		int cow = 0; //Integer.parseInt(question[2])
+		
+		if(result.size() > 1) {
+			for(int i = 0 ; i < result.size() ; i++) {
+				result.get(i);
+			}
+		}else {
+			
+		}
+		
+		//data check
+		System.out.println("question[0] : " + question[0]);
+		System.out.println("result.size : " + result.size());
+		System.out.println(qNum);
+		
+		return result;
 	}
 
 }
