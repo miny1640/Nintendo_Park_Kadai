@@ -39,7 +39,6 @@ public class BullsAndCows {
 			
 			for(int j = 0 ; j < qNum ; j++) {
 				System.out.println("Please enter the <Question>,<Bulls>,<Cows>.");
-				//sc.nextLine();
 				ds[j] = sc.nextLine();
 			}
 			
@@ -65,8 +64,6 @@ public class BullsAndCows {
 	static ArrayList<String> bullsAndCows(ArrayList<String> result, String[] ds, int qNum) {
 		
 		String[] question = ds[qNum - 1].split(" ");
-		//int bull = 0; //Integer.parseInt(question[1])
-		//int cow = 0; //Integer.parseInt(question[2])
 
 		if(qNum > 1) {
 			result = bullsAndCows(result, ds, qNum - 1);
@@ -101,12 +98,6 @@ public class BullsAndCows {
 			}
 		}
 		
-		//data check
-		System.out.println("BEFORE");
-		System.out.println("question[0] : " + question[0]);
-		System.out.println("result.size : " + result.size());
-		System.out.println(qNum);
-		
 		if(result.size() >= 1) { //If 'result' has data, filter the data.
 			for(int i = 0 ; i < result.size() ; i++) { //check
 				
@@ -125,17 +116,9 @@ public class BullsAndCows {
 				if(!(bull == Integer.parseInt(question[1]) && cow == Integer.parseInt(question[2]))) { //filtering
 					result.remove(i);
 					i--;
-				}else {
-					System.out.println(result.get(i) + " : " + question[0] + " bull = " + bull + " cow = " + cow);
 				}
 			}
 		}
-		
-		//data check
-		System.out.println("AFTER");
-		System.out.println("question[0] : " + question[0]);
-		System.out.println("result.size : " + result.size());
-		System.out.println(qNum);
 		
 		return result;
 	}
