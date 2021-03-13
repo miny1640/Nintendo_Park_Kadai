@@ -61,8 +61,8 @@ public class BullsAndCows {
 	static ArrayList<String> bullsAndCows(ArrayList<String> result, String[] ds, int qNum) {
 		
 		String[] question = ds[qNum - 1].split(" ");
-		int bull = 0; //Integer.parseInt(question[1])
-		int cow = 0; //Integer.parseInt(question[2])
+		//int bull = 0; //Integer.parseInt(question[1])
+		//int cow = 0; //Integer.parseInt(question[2])
 
 		if(qNum > 1) {
 			result = bullsAndCows(result, ds, qNum - 1);
@@ -105,6 +105,10 @@ public class BullsAndCows {
 		
 		if(result.size() >= 1) { //If 'result' has data, filter the data.
 			for(int i = 0 ; i < result.size() ; i++) { //check
+				
+				int bull = 0; //Integer.parseInt(question[1])
+				int cow = 0; //Integer.parseInt(question[2])
+				
 				for(int j = 0 ; j < 4 ; j++) {
 					if(result.get(i).contains(String.valueOf(question[0].charAt(j)))) { //cow? bull?
 						if(result.get(i).charAt(j) == question[0].charAt(j)) { //bull
@@ -116,6 +120,9 @@ public class BullsAndCows {
 				}
 				if(!(bull == Integer.parseInt(question[1]) && cow == Integer.parseInt(question[2]))) { //filtering
 					result.remove(i);
+					i--;
+				}else {
+					System.out.println(result.get(i) + " : " + question[0] + " bull = " + bull + " cow = " + cow);
 				}
 			}
 		}
