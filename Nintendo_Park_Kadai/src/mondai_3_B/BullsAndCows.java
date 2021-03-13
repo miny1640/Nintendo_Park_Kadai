@@ -47,7 +47,12 @@ public class BullsAndCows {
 			ArrayList<String> result = new ArrayList<String>();
 			result = bullsAndCows(result, ds, qNum);
 			
-			answer[i] = String.valueOf(i);
+			if(result.size() == 1) {
+				answer[i] = result.get(0);
+			}else {
+				answer[i] = "None";
+			}
+			//answer[i] = String.valueOf(i);
 		}
 		sc.close();
 
