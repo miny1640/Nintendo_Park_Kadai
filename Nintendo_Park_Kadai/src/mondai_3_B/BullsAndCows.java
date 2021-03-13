@@ -52,7 +52,6 @@ public class BullsAndCows {
 			}else {
 				answer[i] = "None";
 			}
-			//answer[i] = String.valueOf(i);
 		}
 		sc.close();
 
