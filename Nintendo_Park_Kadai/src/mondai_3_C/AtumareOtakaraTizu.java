@@ -1,6 +1,5 @@
 package mondai_3_C;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AtumareOtakaraTizu {
@@ -13,6 +12,8 @@ public class AtumareOtakaraTizu {
 		
 		String[] ds;
 		String[] answer;
+		
+		String[] calender = new String[31];
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter the number of sets.");
@@ -37,7 +38,18 @@ public class AtumareOtakaraTizu {
 				ds[j] = sc.nextLine();
 			}
 			
+			for(int j = 0 ; j < calender.length ; j++) {
+				calender[j] = "";
+				for(int k = 0 ; k < ds.length ; k++) {
+					if(ds[k].contains(String.valueOf(j))) {
+						calender[j] += String.valueOf(k) + " ";
+					}
+				}
+			}
+			
 			//Start
+			answer[i] = atumareOtakaraTizu("", ds, calender, 0);
+			
 		}
 		sc.close();
 
@@ -47,6 +59,11 @@ public class AtumareOtakaraTizu {
 			System.out.printf("SET[%d] : " + answer[i] + "\n", i + 1);
 		}
 
+	}
+	
+	static String atumareOtakaraTizu(String result, String[] ds, String[] calender, int count) {
+		
+		return result;
 	}
 
 }
